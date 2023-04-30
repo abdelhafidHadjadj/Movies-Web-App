@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Navbar style-----*/
+
+.navbar{
+@apply flex flex-row p-5 border border-[--second-color] w-full justify-between items-center
+}
+
+.boxBtn {
+    @apply flex justify-around w-[30%]
+}
+
+
+/*-----Sidebar ----*/
+.sidebar {
+    @apply flex flex-col items-center gap-2 px-5 pt-10 border-r border-[#e30349] basis-1/4
+}
+.popup {
+    top: 30%;
+    left: 50%;
+    z-index: 15;
+box-shadow: 0 0 350px 700px rgba(0, 0, 0, 0.64);
+    @apply border border-[--second-color] p-5 bg-[--first-color] flex flex-col gap-5 items-center absolute 
+}
+
+.boxTrailer {
+    @apply border 
+}
+.btn-out {
+    border-radius: 2px;
+    @apply flex gap-2 items-center justify-center border border-[--second-color] p-2 w-[40%]
+}
+
+.btn-out:hover {
+    background-color: var(--second-color);
+    transition: 400ms;
+}
+
+
+/*home style*/
+.home {
+    background: url(https://res.cloudinary.com/gestionprojet/image/upload/v1682685720/intimidating-squid-game-pfp-8dswmnf1mopmkpza_fojjwk.jpg);
+   background-size: cover;
+    @apply basis-3/4 flex flex-col justify-center relative
+}
+.boxMovies {
+    @apply  p-5 z-10 bottom-0 basis-1/3 bg-gradient-to-t from-[--first-color] via-[--first-color]
+}
+.article {
+  
+    border-radius: 10px;
+    border-color: var(--second-color);
+    @apply w-[15%] border-2
+}
+
+.article img {
+    
+    @apply w-full rounded-xl
+    
+}
+
+.displayMv {
+@apply flex justify-between
+}
+.navMoviesHome a{
+    opacity: 0.6;
+}
+.secPartCard{
+@apply p-2
+}
+.secPartCard h2{
+    font-size: 18px;
+}
+
+.box {
+    font-size: 14px;
+    @apply flex justify-between
+    
+}
+
+
+
+/*login*/
+
+.login-section {
+    @apply w-[100%] items-center mt-[10%] gap-5 p-10
+}
+.login {
+    @apply w-[45%] gap-5 items-center
+}
+.input-box{
+    @apply flex flex-col w-[100%]
+}
+.input-box input{
+background-color: transparent;
+border-radius: 5px;
+@apply border p-2 border-[--second-color]
+}
+
+.btn-submit {
+    border-radius: 5px;
+
+    @apply border px-8 py-2 border-[--second-color]
+}
+
+.btn-submit:hover {
+background-color: var(--second-color);
+transition: 300ms ease;
+}

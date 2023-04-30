@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Main from './component/Main';
+import Navbar from './component/Navbar';
+import SideBar from './component/SideBar';
+import movies from "./data.json";
+
 
 function App() {
+let users = [{username: "Admin", password: "123456", isAdmin: true} , {username: "user" , password: "000", isAdmin: false}]
+localStorage.setItem("movies", JSON.stringify(movies))
+localStorage.setItem("users", JSON.stringify(users))
+
+
+getProfile()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Navbar />
+      <div className='mainApp'>
+     <SideBar/>
+      <Main/>
+      </div>
     </div>
   );
 }
 
 export default App;
+
+
+
+function getProfile() {
+  
+let loggedData = localStorage.getItem("logged");
+
+if (loggedData) {
+  let { value, expiry } = JSON.parse(loggedData);
+  let expiryTime = new Date(expiry).getTime();
+  let currentTime = new Date().getTime();
+  if (currentTime > expiryTime) {
+    console.log("expired");
+    localStorage.removeItem("logged");
+  } else {
+    console.log("not yet");
+  }
+}
+}
