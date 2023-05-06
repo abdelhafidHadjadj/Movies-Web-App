@@ -70,11 +70,16 @@ const Login = () => {
       <form onSubmit={login} className="login flex flex-col">
         <div className="input-box">
           <label htmlFor="username">Username</label>
-          <input type="text" placeholder="Username" name="username" />
+          <input required type="text" placeholder="Username" name="username" />
         </div>
         <div className="input-box">
           <label htmlFor="password">Password</label>
-          <input type="password" placeholder="Password" name="password" />
+          <input
+            required
+            type="password"
+            placeholder="Password"
+            name="password"
+          />
         </div>
         <input type="submit" className="btn-submit" value={"Login"} />
       </form>

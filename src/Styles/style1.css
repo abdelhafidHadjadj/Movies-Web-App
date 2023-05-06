@@ -5,7 +5,11 @@
 /* ---- Navbar style-----*/
 
 .navbar{
-@apply flex flex-row p-5 border border-[--second-color] w-full justify-between items-center
+    z-index: 20;
+    backdrop-filter: blur(10px);
+
+
+@apply flex flex-row p-5 h-[10%] border-b border-[--second-color] w-full justify-between items-center absolute 
 }
 
 .boxBtn {
@@ -15,18 +19,23 @@
 
 /*-----Sidebar ----*/
 .sidebar {
-    @apply flex flex-col items-center gap-2 px-5 pt-10 border-r border-[#e30349] basis-1/4
+    background: #00000085;
+    backdrop-filter: blur(10px);
+
+    @apply absolute z-10 w-10 top-[10%] h-[90%] w-[20%] flex flex-col items-center gap-2  pt-10 border-r border-[#e30349] 
 }
+
+
 .popup {
     top: 30%;
-    left: 50%;
-    z-index: 15;
-box-shadow: 0 0 350px 700px rgba(0, 0, 0, 0.64);
+    left: 15%;
+    z-index: 30;
+    box-shadow: 0 0 350px 700px rgba(0, 0, 0, 0.64);
     @apply border border-[--second-color] p-5 bg-[--first-color] flex flex-col gap-5 items-center absolute 
 }
 
 .boxTrailer {
-    @apply border 
+
 }
 .btn-out {
     border-radius: 2px;
@@ -41,12 +50,28 @@ box-shadow: 0 0 350px 700px rgba(0, 0, 0, 0.64);
 
 /*home style*/
 .home {
-    background: url(https://res.cloudinary.com/gestionprojet/image/upload/v1682685720/intimidating-squid-game-pfp-8dswmnf1mopmkpza_fojjwk.jpg);
+    background: url(https://res.cloudinary.com/gestionprojet/image/upload/v1682685719/squid-game-fanart-tf_yheo8q.jpg);
    background-size: cover;
-    @apply basis-3/4 flex flex-col justify-center relative
+   @apply w-full flex flex-col justify-center relative
 }
+
+.newMv {
+    background: url(https://res.cloudinary.com/gestionprojet/image/upload/v1683141115/army-soldiers-fighting-with-guns-defending-their-country_1_ibwchr.jpg);
+    background-size: cover;
+    @apply w-full flex flex-col justify-center relative
+ 
+}
+.tpRat{
+    background: url(https://res.cloudinary.com/gestionprojet/image/upload/v1683142519/goku-jpqat0bmje2frsv3_epv1cg.jpg);
+    background-size: cover;
+     @apply w-full flex flex-col justify-center relative
+ 
+
+}
+
+
 .boxMovies {
-    @apply  p-5 z-10 bottom-0 basis-1/3 bg-gradient-to-t from-[--first-color] via-[--first-color]
+    @apply  p-5 z-10 ml-[20%] bottom-0 basis-1/6 bg-gradient-to-t from-[--first-color] via-[--first-color]
 }
 .article {
   
@@ -85,7 +110,7 @@ box-shadow: 0 0 350px 700px rgba(0, 0, 0, 0.64);
 /*login*/
 
 .login-section {
-    @apply w-[100%] items-center mt-[10%] gap-5 p-10
+    @apply w-[100%] items-center items-center ml-[20%] mt-[20%] gap-5 
 }
 .login {
     @apply w-[45%] gap-5 items-center
@@ -108,4 +133,63 @@ border-radius: 5px;
 .btn-submit:hover {
 background-color: var(--second-color);
 transition: 300ms ease;
+}
+
+
+/* -----Dashboard-----*/
+
+.boxDash {
+    @apply border w-full  border-[--second-color] flex flex-col items-center justify-center
+}
+
+.tbMovie {
+    border-radius: 5px;
+    @apply border-2 w-full
+
+}
+.adminSection {
+  @apply  w-[90%] ml-[20%] mt-[5%]
+}
+
+/*-----Movies page------*/
+
+.navMovies{
+@apply p-5 flex gap-5
+}
+.navType{
+ @apply flex gap-5  
+}
+
+.navType button{
+    border-radius: 5px;
+    @apply border px-4 py-2
+}
+
+
+.searchBar {
+    @apply flex 
+}
+
+
+
+
+.searchBar input{
+    @apply bg-transparent border p-2 
+}
+
+/*-----Movie detaills----*/
+
+.movieDetaills {
+    @apply flex justify-center m-10 gap-5 ml-[25%] mt-[10%]
+}
+.movieDetaills h1{
+  font-size: xx-large;
+}
+.movieDetaills p{
+  font-size: 15px;
+}
+.movieDetaills img{
+
+height: 50%;
+     
 }

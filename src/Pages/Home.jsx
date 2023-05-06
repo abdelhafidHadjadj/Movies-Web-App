@@ -11,7 +11,7 @@ const Home = () => {
   }
   return (
     <section className="home">
-      <div className="basis-2/3"></div>
+      <div className="basis-3/4"></div>
       <article className="boxMovies">
         <div className="navMoviesHome flex justify-between">
           <h2>Popular Movies</h2>

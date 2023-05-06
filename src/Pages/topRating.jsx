@@ -1,6 +1,7 @@
 import "../Styles/style1.css";
 import movies from "../data.json";
 import Movie from "./movieCard";
+import { Link } from "react-router-dom";
 
 const TopRating = () => {
   let displayMv = [];
@@ -8,19 +9,23 @@ const TopRating = () => {
     displayMv[i] = movies[i];
   }
   return (
-    <section className="home">
+    <section className="tpRat">
       <div className="basis-2/3"></div>
       <article className="boxMovies">
-        <h2>Popular Movies</h2>
+        <div className="navMoviesHome flex justify-between">
+          <h2>Popular Movies</h2>
+          <Link to="/movies">All movies</Link>
+        </div>
         <div className="displayMv">
           {displayMv.map((mv) => (
-            <Movie
-              key={mv.id}
-              title={mv.name}
-              img={mv.poster}
-              playtime={mv.playtime}
-              release={mv.release}
-            />
+            <Link to={`/movies/${mv.id}`} className="article">
+              <Movie
+                title={mv.name}
+                img={mv.poster}
+                playtime={mv.playtime}
+                release={mv.release}
+              />
+            </Link>
           ))}
         </div>
       </article>

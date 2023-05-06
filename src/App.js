@@ -7,12 +7,13 @@ import movies from "./data.json";
 
 
 function App() {
-let users = [{username: "Admin", password: "123456", isAdmin: true} , {username: "user" , password: "000", isAdmin: false}]
+let users = [{id: 0,username: "Admin", password: "123456", isAdmin: true} , {id:1, username: "user" , password: "000", isAdmin: false}]
 localStorage.setItem("movies", JSON.stringify(movies))
 localStorage.setItem("users", JSON.stringify(users))
 
 
 getProfile()
+
 
   return (
     <div className="App">

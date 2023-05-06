@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "../Styles/style1.css";
 import { useEffect, useState } from "react";
 import { SlLogout } from "react-icons/sl";
+import { FaFacebookSquare } from "react-icons/fa";
 const SideBar = () => {
   const [display, setDisplay] = useState(true);
   const [open, setOpen] = useState(false);
@@ -9,28 +10,38 @@ const SideBar = () => {
     window.location.pathname == "/login" ? setDisplay(false) : setDisplay(true);
   }, []);
   console.log(display);
+  const isLogged = JSON.parse(localStorage.getItem("logged"));
+
   return (
-    <>
-      <aside className="sidebar">
-        <div className="link basis-1/4">
-          <video width="750" height="500" autoPlay controls>
-            <source
-              src="https://www.youtube.com/watch?v=mO0OuR26IZM"
-              type="video/mp4"
-            />
-          </video>{" "}
-        </div>
-        <div className="boxTrailer basis-1/4"></div>
-        <div className="boxTrailer basis-1/4"></div>
+    <aside className="sidebar">
+      <div className="boxTrailer basis-1/4">
+        <video className="w-full" autoPlay loop>
+          <source
+            src="https://res.cloudinary.com/gestionprojet/video/upload/v1683153397/EXTRACTION_2___Official_Teaser_Trailer___Netflix_1080P_HD_gxbnmo.mp4"
+            type="video/mp4"
+          />
+        </video>{" "}
+      </div>
+      <div className="boxTrailer basis-1/4">
+        <video className="w-full" controls loop>
+          <source
+            src="https://res.cloudinary.com/gestionprojet/video/upload/v1683153894/Yu-Gi-Oh__THE_DARK_SIDE_OF_DIMENSIONS_-_Official_Trailer_2_1080P_HD_ogjspv.mp4"
+            type="video/mp4"
+          />
+        </video>{" "}
+      </div>
+      <div className="boxTrailer basis-1/4"></div>
+      {isLogged && (
         <button onClick={() => setOpen(true)} className="btn-out">
           <SlLogout size={25} /> Log Out
         </button>
-        {open && <PopUp setOpen={setOpen} />}
-        <div>
-          <p>Social media</p>
-        </div>
-      </aside>
-    </>
+      )}
+      {open && <PopUp setOpen={setOpen} />}
+      <div>
+        <p>Social media</p>
+        <FaFacebookSquare />
+      </div>
+    </aside>
   );
 };
 

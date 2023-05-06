@@ -18,5 +18,5 @@ body {
 
 
 .mainApp{
-@apply flex h-full absolute h-[90%] w-[100%]
+@apply flex h-full absolute h-[100%] w-[100%]
 }
