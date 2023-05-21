@@ -11,6 +11,7 @@ import Users from "../Pages/adminComp/users";
 import MoviesAdm from "../Pages/adminComp/movies";
 import NotFound from "../Pages/404";
 import Forbidden from "../Pages/403";
+import SignUp from "../Pages/SignUp";
 const Main = () => {
   return (
     <>
@@ -26,6 +27,7 @@ const Main = () => {
         <Route path="new" element={<NwMovies />} />
         <Route path="top-rating" element={<TopRating />} />
         <Route path="Login" element={<Login />} />
+        <Route path="Sign-up" element={<SignUp />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/forbidden" element={<Forbidden />} />
       </Routes>

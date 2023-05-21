@@ -1,3 +1,4 @@
+import "../Styles/style1.css";
 const Movie = ({ title, playtime, img, release, genre }) => {
   return (
     <>

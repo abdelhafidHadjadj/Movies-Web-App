@@ -87,10 +87,14 @@
 }
 
 .displayMv {
-@apply flex justify-between
+@apply flex justify-evenly
 }
 .navMoviesHome a{
     opacity: 0.6;
+}
+.navMoviesHome hr{
+    opacity: 0.6;
+    width: 85%;
 }
 .secPartCard{
 @apply p-2
@@ -105,15 +109,49 @@
     
 }
 
-
+.arrow-btn {
+    border-radius: 35px;
+    @apply border p-2 
+}
+.arrow-btn:hover {
+    background-color: var(--first-color);
+    color: var(--second-color);
+border-color: var(--second-color);
+}
 
 /*login*/
 
 .login-section {
-    @apply w-[100%] items-center items-center ml-[20%] mt-[20%] gap-5 
+    @apply w-[100%]
 }
+
+.box-login {
+    @apply ml-[20%] flex flex-col items-center justify-center h-full gap-5
+}
+.signIn-btn {
+@apply w-[55%] flex justify-end
+
+}
+.box-login a{
+    border-radius: 25px;
+    
+@apply border py-2 px-4 flex items-center  gap-2
+}
+.box-login a:hover{
+    transition: 350ms;
+    border-color: var(--second-color);
+@apply bg-[--second-color] 
+}
+
+.login-content {
+    box-shadow: 0 0 20px 5px #e303498a;
+    border-color: var(--second-color);
+    @apply border flex flex-col items-center gap-5 px-5 py-5  w-[55%] 
+}
+
+
 .login {
-    @apply w-[45%] gap-5 items-center
+    @apply gap-3 items-center w-[80%]
 }
 .input-box{
     @apply flex flex-col w-[100%]
@@ -121,18 +159,22 @@
 .input-box input{
 background-color: transparent;
 border-radius: 5px;
-@apply border p-2 border-[--second-color]
+
+@apply border py-[0.25rem] px-[0.5rem] border-[--second-color]
 }
 
 .btn-submit {
-    border-radius: 5px;
-
-    @apply border px-8 py-2 border-[--second-color]
+    border-radius: 25px;
+cursor: pointer;
+opacity: 0.8;
+    @apply border w-full mt-5 px-8 py-2 border-[--second-color] bg-[--second-color]
 }
 
 .btn-submit:hover {
 background-color: var(--second-color);
 transition: 300ms ease;
+opacity: 1;
+
 }
 
 
@@ -189,7 +231,48 @@ transition: 300ms ease;
   font-size: 15px;
 }
 .movieDetaills img{
-
 height: 50%;
-     
 }
+
+.editPopup {
+  
+    @apply absolute left-[35%] flex flex-col w-[35%] border gap-4 px-10 py-10 top-[25%] bg-[--first-color]
+}
+.firstBoxEditPopup{
+    @apply flex justify-center
+
+}
+.firstBoxEditPopup span{
+    font-size: 18px;
+    cursor: pointer;
+    @apply absolute top-2 right-4 
+
+}
+.editPopup form{
+   @apply flex flex-col gap-4 
+}
+.editPopup form button{
+    margin: 0.5rem auto;
+   @apply w-[30%] py-2 border 
+}
+
+.editPopup form div{
+    @apply flex flex-col 
+ }
+
+ .editPopup form div input{
+    @apply flex flex-col bg-[transparent] border px-4 py-2
+ }
+
+ .btn-back{
+height: fit-content;
+ }
+
+ /*-------------------Admin page -------------*/
+
+.btn-add:hover {
+    transition: 350ms ease;
+    
+@apply bg-[--second-color]
+}
+

@@ -1,33 +1,20 @@
 import "../Styles/style1.css";
 import movies from "../data.json";
-import Movie from "./movieCard";
 import "../Styles/style1.css";
 import { Link } from "react-router-dom";
+import ImageSlider from "../Options/slider";
 const NwMovies = () => {
-  let displayMv = [];
-  for (let i = 0; i < 5; i++) {
-    displayMv[i] = movies[i];
-  }
+  let { movies } = JSON.parse(localStorage.getItem("movies"));
+
   return (
     <section className="newMv">
       <div className="basis-2/3"></div>
       <article className="boxMovies">
-        <div className="navMoviesHome flex justify-between">
-          <h2>New Movies</h2>
+        <div className="navMoviesHome items-center gap-2 flex ml-[5%]">
           <Link to="/movies">All movies</Link>
-        </div>{" "}
-        <div className="displayMv">
-          {displayMv.map((mv) => (
-            <Link to={`/movies/${mv.id}`} className="article">
-              <Movie
-                title={mv.name}
-                img={mv.poster}
-                playtime={mv.playtime}
-                release={mv.release}
-              />
-            </Link>
-          ))}
+          <hr />
         </div>
+        <ImageSlider displayMv={movies} />
       </article>
     </section>
   );

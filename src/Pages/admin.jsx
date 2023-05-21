@@ -26,22 +26,6 @@ const Admin = () => {
     }
   }
 
-  function add(event) {
-    event.preventDefault();
-    const file = event.target.file.files[0];
-    console.log(file);
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      setImage(reader.result);
-    };
-    console.log(image);
-    let info = {
-      name: event.target.name.value,
-      file: image,
-    };
-    console.log(info);
-  }
   return (
     <section className="adminSection ">
       <div className="flex flex-col items-center w-full h-[100%]">
@@ -68,6 +52,7 @@ const Admin = () => {
           <input type="file" name="file" multiple />
           <button type="submit">add</button>
         </form> */}
+
         <Outlet />
       </div>
     </section>

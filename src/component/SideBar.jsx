@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import "../Styles/style1.css";
 import { useEffect, useState } from "react";
 import { SlLogout } from "react-icons/sl";
-import { FaFacebookSquare } from "react-icons/fa";
+import { FiFacebook } from "react-icons/fi";
+import { BsInstagram } from "react-icons/bs";
+import { TfiTwitter } from "react-icons/tfi";
+import { SlSocialYoutube } from "react-icons/sl";
 const SideBar = () => {
   const [display, setDisplay] = useState(true);
   const [open, setOpen] = useState(false);
@@ -37,9 +40,11 @@ const SideBar = () => {
         </button>
       )}
       {open && <PopUp setOpen={setOpen} />}
-      <div>
-        <p>Social media</p>
-        <FaFacebookSquare />
+      <div className="flex gap-2 items-center">
+        <FiFacebook size={22} />
+        <BsInstagram size={20} />
+        <TfiTwitter size={22} />
+        <SlSocialYoutube size={22} />
       </div>
     </aside>
   );

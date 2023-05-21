@@ -1,17 +1,16 @@
 import { useNavigate } from "react-router";
 
 const Client = () => {
-  let info = JSON.parse(localStorage.getItem("logged"));
-  let users = JSON.parse(localStorage.getItem("users"));
+  let { value } = JSON.parse(localStorage.getItem("logged"));
+  let { users } = JSON.parse(localStorage.getItem("users"));
   let navigate = useNavigate();
 
-  if (info) {
-    var { value } = info;
+  if (value) {
     var index;
     for (let i = 0; i < users.length; i++) {
       if (
-        users[i].username == value.info.username &&
-        users[i].password == value.info.password
+        users[i].username == value.username &&
+        users[i].password == value.password
       ) {
         index = i;
       }
@@ -37,7 +36,7 @@ const Client = () => {
           <label>Username</label>
           <input
             type="text"
-            defaultValue={info ? value.info.username : ""}
+            defaultValue={value ? value.username : ""}
             className="bg-[transparent] border text-white"
           />
         </div>
@@ -46,7 +45,7 @@ const Client = () => {
           <input
             type="password"
             className="bg-[transparent] border text-white"
-            defaultValue={info ? value.info.password : ""}
+            defaultValue={value ? value.password : ""}
           />
         </div>
         <button type="submit" className="border w-[50%] p-2">

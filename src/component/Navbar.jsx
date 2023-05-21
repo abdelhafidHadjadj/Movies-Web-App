@@ -1,21 +1,20 @@
 import { CgProfile } from "react-icons/cg";
 import { RiMovie2Line } from "react-icons/ri";
+import { FiLogIn } from "react-icons/fi";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   let isLogged = localStorage.getItem("logged");
   var route;
   if (isLogged) {
-    var { info, isAdmin } = JSON.parse(localStorage.getItem("logged")).value;
-    console.log(isAdmin);
-    if (isAdmin) {
+    var { value } = JSON.parse(localStorage.getItem("logged"));
+    console.log(value.isAdmin);
+    if (value.isAdmin) {
       route = "/admin";
     } else {
       route = "/";
     }
   }
-  if (info) {
-    console.log(info);
-  }
+
   return (
     <>
       <nav className="navbar">
@@ -33,16 +32,19 @@ const Navbar = () => {
             Top Rating
           </Link>
         </div>
-        {info ? (
+        {value ? (
           <Link
-            to={isAdmin ? "/admin" : "/profile"}
+            to={value.isAdmin ? "/admin" : "/profile"}
             className="flex items-center gap-2"
           >
             <CgProfile size={26} />
-            {info.username}
+            {value.username}
           </Link>
         ) : (
-          <Link to="login">Login</Link>
+          <Link to="login" className="flex gap-2">
+            <FiLogIn size={24} />
+            Sign in
+          </Link>
         )}
       </nav>
     </>

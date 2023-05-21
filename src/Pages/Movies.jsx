@@ -3,7 +3,8 @@ import Movie from "./movieCard";
 import "../Styles/style1.css";
 import { useEffect, useState } from "react";
 const Movies = () => {
-  let movies = JSON.parse(localStorage.getItem("movies"));
+  let { movies } = JSON.parse(localStorage.getItem("movies"));
+  const [search, setSearch] = useState("");
   const [genre, setGenre] = useState("");
   let newMv = movies;
   if (genre) {
@@ -19,7 +20,11 @@ const Movies = () => {
     <section className="ml-[20%] mt-[5%] flex flex-col basis-3/4 p-5">
       <nav className="navMovies">
         <div className="searchBar">
-          <input type="text" placeholder="Search" />
+          <input
+            type="text"
+            placeholder="Search"
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </div>
         <div className="navType">
           {genres.map((gr) => (
@@ -30,17 +35,23 @@ const Movies = () => {
 
       <div className="overflow-auto flex flex-wrap gap-5">
         {!newMv.length == 0 ? (
-          newMv.map((mv) => (
-            <Link to={`/movies/${mv.id}`} className="article">
-              <Movie
-                title={mv.name}
-                playtime={mv.playtime}
-                img={mv.poster}
-                release={mv.release}
-                descrp={mv.description}
-              />
-            </Link>
-          ))
+          newMv
+            .filter((items) => {
+              return search.toLocaleLowerCase() === ""
+                ? items
+                : items.name.toLocaleLowerCase().includes(search);
+            })
+            .map((mv) => (
+              <Link to={`/movies/${mv.id}`} className="article">
+                <Movie
+                  title={mv.name}
+                  playtime={mv.playtime}
+                  img={mv.poster}
+                  release={mv.release}
+                  descrp={mv.description}
+                />
+              </Link>
+            ))
         ) : (
           <h2>Not available</h2>
         )}

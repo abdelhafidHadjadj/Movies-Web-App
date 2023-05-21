@@ -1,13 +1,16 @@
 import { useNavigate, useParams } from "react-router";
 import "../Styles/style1.css";
+import { HiOutlineArrowCircleLeft } from "react-icons/hi";
 const MovieDetaills = () => {
   const { movieId } = useParams();
-  let movies = JSON.parse(localStorage.getItem("movies"));
+  let { movies } = JSON.parse(localStorage.getItem("movies"));
   let mv = movies.find((mv) => mv.id == movieId);
   const navigate = useNavigate();
   return (
     <article className="movieDetaills">
-      <button onClick={() => navigate(-1)}>go back</button>
+      <button className="btn-back" onClick={() => navigate(-1)}>
+        <HiOutlineArrowCircleLeft size={30} />
+      </button>
       <img src={mv.poster} alt="" />
       <div>
         <h1>{mv.name}</h1>
