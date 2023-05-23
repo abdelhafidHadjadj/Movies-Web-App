@@ -276,3 +276,61 @@ height: fit-content;
 @apply bg-[--second-color]
 }
 
+
+
+/*-----Movies comp in admin dash------*/
+
+.editPopupMov{
+@apply absolute left-[35%] flex flex-col w-[45%] border gap-5 px-10 py-10 top-[15%] bg-[--first-color]
+}
+.editPopupMov form{
+    @apply flex gap-4 
+ }
+ .editPopupMov form button{
+     margin: 0.5rem auto;
+    @apply w-[30%] py-2 border 
+ }
+ 
+ .editPopupMov form .input{
+     @apply flex flex-col 
+  }
+ .editPopupMov form .min{
+     @apply w-[45%]
+     
+  }
+ .editPopupMov form .hour{
+     @apply w-[45%]
+ }
+ 
+        .editPopupMov form div input{
+            @apply flex flex-col bg-[transparent] border px-4 py-2
+        }
+        .editPopupMov form textarea{
+            @apply w-[100%] h-[100%] bg-transparent border
+        }
+
+  .posterEdit {
+    width: 60%;
+  }
+
+
+  .btn-hover:hover {
+    background-color: var(--second-color);
+transition: 350ms;  
+}
+
+.selectedBtn {
+    text-decoration: none;
+    transition: 450ms;
+    border-radius: 5px;
+    cursor: pointer;
+    @apply border px-4 py-2 my-2
+}
+.selectedBtn:hover {
+    
+    @apply bg-[--second-color]
+}
+
+.genreList {
+    @apply flex flex-wrap gap-2
+}

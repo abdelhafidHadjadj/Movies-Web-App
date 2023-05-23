@@ -9,6 +9,7 @@ import Movies from "../Pages/Movies";
 import Client from "../Pages/client";
 import Users from "../Pages/adminComp/users";
 import MoviesAdm from "../Pages/adminComp/movies";
+import Downloads from "../Pages/adminComp/download";
 import NotFound from "../Pages/404";
 import Forbidden from "../Pages/403";
 import SignUp from "../Pages/SignUp";
@@ -22,6 +23,7 @@ const Main = () => {
         <Route path="admin" element={<Admin />}>
           <Route path="users" element={<Users />} />
           <Route path="movies" element={<MoviesAdm />} />
+          <Route path="downloads" element={<Downloads />} />
         </Route>
         <Route path="/profile" element={<Client />} />
         <Route path="new" element={<NwMovies />} />

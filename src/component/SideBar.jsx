@@ -26,7 +26,7 @@ const SideBar = () => {
         </video>{" "}
       </div>
       <div className="boxTrailer basis-1/4">
-        <video className="w-full" controls loop>
+        <video className="w-full" autoPlay loop>
           <source
             src="https://res.cloudinary.com/gestionprojet/video/upload/v1683153894/Yu-Gi-Oh__THE_DARK_SIDE_OF_DIMENSIONS_-_Official_Trailer_2_1080P_HD_ogjspv.mp4"
             type="video/mp4"

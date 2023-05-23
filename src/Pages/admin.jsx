@@ -8,12 +8,15 @@ import Forbidden from "./403";
 import { Link } from "react-router-dom";
 
 const Admin = () => {
-  let users = JSON.parse(localStorage.getItem("users")) || [];
-  let movies = JSON.parse(localStorage.getItem("movies")) || [];
+  let { users } = JSON.parse(localStorage.getItem("users")) || [];
+  let { movies } = JSON.parse(localStorage.getItem("movies")) || [];
+  let { downloads } = JSON.parse(localStorage.getItem("downloads")) || [];
   let isLogged = JSON.parse(localStorage.getItem("logged"));
   let navigate = useNavigate();
   let nbrUsers = users.length;
   let nbrMovies = movies.length;
+  console.log(downloads);
+  let nbrDownloads = downloads.length;
   const [image, setImage] = useState("");
 
   if (!isLogged) {
@@ -41,17 +44,12 @@ const Admin = () => {
             <p>Total movies</p>
             <span>{nbrMovies}</span>
           </Link>
-          <Link to="download" className="boxDash">
+          <Link to="downloads" className="boxDash">
             <BsFillCloudDownloadFill size={38} />
             <p>Download</p>
-            <span>22</span>
+            <span>{nbrDownloads}</span>
           </Link>
         </div>
-        {/* <form onSubmit={add}>
-          <input type="text" name="name" id="" />
-          <input type="file" name="file" multiple />
-          <button type="submit">add</button>
-        </form> */}
 
         <Outlet />
       </div>

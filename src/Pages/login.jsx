@@ -31,13 +31,15 @@ const Login = () => {
 
     if (exist && users[index].isAdmin) {
       console.log("He's admin");
-      navigate("/admin");
+      navigate("/admin/users");
       window.location.reload();
       let date = new Date();
       date.setTime(date.getTime() + 60 * 1000);
       let ttl = date.toUTCString();
       info.isAdmin = true;
       info.username = users[index].username;
+      info.email = users[index].email;
+
       localStorage.setItem(
         "logged",
         JSON.stringify({ value: info, expiry: ttl })
